@@ -7,7 +7,6 @@ public class Venda {
 
     public Venda() {
         this.productList = new ArrayList<Producte>();
-        this.PreuTotal = 0;
     }
 
     public void addProduct(Producte p) {

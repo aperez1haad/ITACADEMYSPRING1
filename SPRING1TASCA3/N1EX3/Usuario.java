@@ -2,8 +2,8 @@ package INTELIJ.SPRING1TASCA3.N1EX3;
 
 public class Usuario {
 
-    protected String Nombre;
-    protected int Nota;
+    private String Nombre;
+    private int Nota;
 
     public Usuario (String Nombre, int Nota) {
         this.Nombre = Nombre;

@@ -1,64 +1,49 @@
 package INTELIJ.SPRING1TASCA6.N1EX1;
 
 public class NoGenericMethods {
-    private Object objeto1;
-    private Object objeto2;
-    private Object objeto3;
+    private String String1;
+    private String String2;
+    private String String3;
 
-    public NoGenericMethods(Object objeto1, Object objeto2, Object objeto3) {
-        this.objeto1 = objeto1;
-        this.objeto2 = objeto2;
-        this.objeto3 = objeto3;
+    public NoGenericMethods(String String1, String String2, String String3) {
+        this.String1 = String1;
+        this.String2 = String2;
+        this.String3 = String3;
     }
 
-    public void modificarObjeto(int posicion, Object objeto) {
+    public void modificarObjeto(int posicion, String Stringx) {
         if (posicion < 1 || posicion > 3) {
             throw new IllegalArgumentException("Posicion fuera de rango");
         }
         switch (posicion) {
             case 1:
-                objeto1 = objeto;
+                String1 = Stringx;
                 break;
             case 2:
-                objeto2 = objeto;
+                String2 = Stringx;
                 break;
             case 3:
-                objeto3 = objeto;
+                String3 = Stringx;
                 break;
         }
     }
-    public Object extraer(int posicion) {
+    public String extraer(int posicion) {
         if (posicion < 1 || posicion > 3) {
             throw new IllegalArgumentException("Posicion fuera de rango");
         }
-        Object objeto = null;
+        String Stringx = null;
         switch (posicion) {
             case 1:
-                objeto = objeto1;
+                Stringx = String1;
             break;
             case 2:
-                objeto = objeto2;
+                Stringx = String2;
             break;
             case 3:
-                objeto = objeto3;
+                Stringx = String3;
             break;
         }
-        return objeto;
-    }
-
-    // comprobamos:
-    public static void main(String[] args) {
-        NoGenericMethods noGenericMethods1 = new NoGenericMethods("Primer objecte", "Segon objecte", "Tercer objecte");
-        NoGenericMethods noGenericMethods2 = new NoGenericMethods("Segon objecte", "Primer objecte",  "Tercer objecte");
-        NoGenericMethods noGenericMethods3 = new NoGenericMethods("Tercer objecte", "Segon objecte", "Primer objecte");
-
-        System.out.println(noGenericMethods1.extraer(1)); // Debería imprimir "Primer objecte"
-        System.out.println(noGenericMethods2.extraer(2)); // Debería imprimir "Primer objecte"
-        System.out.println(noGenericMethods3.extraer(3)); // Debería imprimir "Primer objecte"
-
-        noGenericMethods1.modificarObjeto(1,"Primer objeto nuevo");
-        System.out.println(noGenericMethods1.extraer(1));
-
+        return Stringx;
     }
 }
 

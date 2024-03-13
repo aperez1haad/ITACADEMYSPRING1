@@ -7,8 +7,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 public class Directorio {
-    public static void listarDirectorio (String rutaDirectorio, FileWriter writer){
-        try {
+    public static void listarDirectorio (String rutaDirectorio, FileWriter writer) throws IOException {
             File directorio = new File(rutaDirectorio);
             String[] contenido = directorio.list(); //Creo Strings con los que haya en el directorio.
             Arrays.sort(contenido); // Ordeno alfabitecamente la Array con el método sort
@@ -41,19 +40,12 @@ public class Directorio {
                     listarDirectorio(archivo.getAbsolutePath(),writer); // aqui le digo que haga lo mismo con las subcarpetas, getAbsolutepath devuelve la ruta de la subcarpeta para que se ejecute el método
                 }
             }
-        }catch(IOException e){
-            System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
-    }
-    public static void generarArchivodeCarpetasySubcarpetas(){
+    public static void generarArchivodeCarpetasySubcarpetas(String RutaDirectorio){
         try(FileWriter writer = new FileWriter("ListadoCarpetasySubcarpetas.txt")){
-            listarDirectorio("C:\\Users\\formacio\\Desktop\\ALEX PEREZ",writer);
+            listarDirectorio(RutaDirectorio,writer);
         }catch (IOException e){
             System.err.println("Error al abrir el archivo"+e.getMessage());
         }
-    }
-    public static void main (String[] args){
-        generarArchivodeCarpetasySubcarpetas();
-
     }
 }

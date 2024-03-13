@@ -4,7 +4,14 @@ import java.util.Arrays;
 import java.util.Date;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
+
 public class Directorio {
+    public static String pedirRuta(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Pon la ruta del directorio: ");
+        return  sc.nextLine();
+    }
     public static void listarDirectorio (String rutaDirectorio, FileWriter writer){
         try {
             File directorio = new File(rutaDirectorio);
@@ -35,13 +42,9 @@ public class Directorio {
         //creo el filewriter fuera del otro método para que no se cree 1000 veces (cada vez que hay una subcarpeta (una llamada recursiva) se crearia un filewriter;
         //así, lo paso por parametro y me printa en el archivo todas las carpetas sin sobreescribirse cada vez que se ejectua el metodo
         try(FileWriter writer = new FileWriter("ListadoCarpetasySubcarpetas.txt")){
-            listarDirectorio("C:\\Users\\formacio\\Desktop\\ALEX PEREZ",writer);
+            listarDirectorio(pedirRuta(),writer);
         }catch (IOException e){
             System.err.println("Error al abrir el archivo"+e.getMessage());
         }
-    }
-    public static void main (String[] args){
-        generarArchivodeCarpetasySubcarpetas();
-
     }
 }

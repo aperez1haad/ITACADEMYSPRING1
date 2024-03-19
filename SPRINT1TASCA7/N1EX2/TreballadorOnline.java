@@ -1,16 +1,16 @@
 package INTELIJ.SPRINT1TASCA7.N1EX2;
 
 public class TreballadorOnline extends Treballador {
-    private static final int tarifaplana = 40;
-    public TreballadorOnline(String Nom, String Apellido, int salarioHora) {
-        super(Nom, Apellido, salarioHora);
+    private static final int tarifaPlana = 40;
+    public TreballadorOnline(String nom, String apellido, int salarioHora) {
+        super(nom, apellido, salarioHora);
     }
     @Override
     public int calcularSou(int horasTrabajadas){
-        return (super.calcularSou(horasTrabajadas))+ tarifaplana;
+        return (super.calcularSou(horasTrabajadas))+ tarifaPlana;
     }
     @Deprecated
     public int MetodoDeprecatedCalcularSouOnline(int HorasTrabajadas){
-        return (super.calcularSou(HorasTrabajadas))+ tarifaplana +150;
+        return (super.calcularSou(HorasTrabajadas))+ tarifaPlana +150;
     }
 }

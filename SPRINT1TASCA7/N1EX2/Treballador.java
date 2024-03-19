@@ -1,26 +1,26 @@
 package INTELIJ.SPRINT1TASCA7.N1EX2;
 
 public class Treballador {
-    protected String Nom;
-    protected String Apellido;
+    protected String nom;
+    protected String apellido;
     protected int salarioHora;
 
-    public Treballador(String Nom, String Apellido , int salarioHora) {
-        this.Nom = Nom;
-        this.Apellido = Apellido;
+    public Treballador(String nom, String apellido , int salarioHora) {
+        this.nom = nom;
+        this.apellido = apellido;
         this.salarioHora = salarioHora;
     }
     public String getNom() {
-        return Nom;
+        return nom;
     }
-    public void setNom(String Nom) {
-        this.Nom = Nom;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
     public int getSalarioHora() {
         return salarioHora;
